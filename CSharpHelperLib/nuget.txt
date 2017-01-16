@@ -1,0 +1,10 @@
+﻿
+http://www.cnblogs.com/daxnet/archive/2013/05/07/3064577.html#
+1.nuget setApiKey  cb1682c7-8322-45dc-a280-de1b4d88ec01
+2.进入DaxnetNugetTest.csproj文件所在目录，然后执行：nuget spec
+3.nuspec编辑
+ <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
+    <projectUrl>http://apworks.org</projectUrl>
+4.nuget pack DaxnetNugetTest.csproj
+5.nuget pack DaxnetNugetTest.csproj -Prop Configuration=Release
+6.nuget push DaxnetNugetTest.1.0.0.0.nupkg

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHelperLib", "CSharpHe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHelperTest", "CSharpHelperTest\CSharpHelperTest.csproj", "{7B30CC6A-016B-4358-B535-56B3C9283D36}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test2", "Test2\Test2.csproj", "{1B7212D9-13CA-47BE-A8B0-AE966783D78A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7B30CC6A-016B-4358-B535-56B3C9283D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B30CC6A-016B-4358-B535-56B3C9283D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B30CC6A-016B-4358-B535-56B3C9283D36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B7212D9-13CA-47BE-A8B0-AE966783D78A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B7212D9-13CA-47BE-A8B0-AE966783D78A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B7212D9-13CA-47BE-A8B0-AE966783D78A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B7212D9-13CA-47BE-A8B0-AE966783D78A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
