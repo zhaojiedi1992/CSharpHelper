@@ -4,7 +4,7 @@ using System.Web;
 
 namespace CSharpHelperLib.Http
 {
-    public class CacheHelper
+    public class HttpCacheHelper
     {
         /// <summary>
         /// 获取数据缓存

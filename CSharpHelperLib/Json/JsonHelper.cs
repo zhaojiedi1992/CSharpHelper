@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using CSharpHelper;
+using Newtonsoft.Json;
 
-namespace CSharpHelper
+namespace CSharpHelperLib.Json
 {
     public static class JsonHelper
     {

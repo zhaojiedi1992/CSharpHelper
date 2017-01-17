@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace CSharpHelper
+namespace CSharpHelperLib.EncryptAndDecode
 {
     public static class KeyHelper
     {

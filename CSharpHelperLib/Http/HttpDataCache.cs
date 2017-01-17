@@ -7,7 +7,7 @@ namespace CSharpHelperLib.Http
     /// <summary>
     /// 缓存相关的操作类
     /// </summary>
-    public class DataCache
+    public class HttpDataCache
     {
         /// <summary>
         /// 获取当前应用程序指定CacheKey的Cache值
