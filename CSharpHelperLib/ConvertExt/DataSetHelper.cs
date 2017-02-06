@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 
-namespace CSharpHelper
+namespace CSharpHelperLib.ConvertExt
 {
     public static class DataSetHelper
     {

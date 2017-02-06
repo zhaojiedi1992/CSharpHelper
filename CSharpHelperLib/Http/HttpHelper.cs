@@ -387,7 +387,7 @@ namespace CSharpHelperLib.Http
                 if (item.ProxyIp.Contains(":"))
                 {
                     string[] plist = item.ProxyIp.Split(':');
-                    WebProxy myProxy = new WebProxy(plist[0].Trim(), Convert(plist[1].Trim()))
+                    WebProxy myProxy = new WebProxy(plist[0].Trim(), Convert.ToInt32(plist[1].Trim()))
                     {
                         Credentials = new NetworkCredential(item.ProxyUserName, item.ProxyPwd)
                     };

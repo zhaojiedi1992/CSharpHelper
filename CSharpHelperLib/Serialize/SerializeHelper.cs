@@ -4,16 +4,16 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Formatters.Soap;
 using System.Xml.Serialization;
 
-namespace CSharpHelper
+namespace CSharpHelper.Serialize
 {
     public class SerializeHelper
     {
-        public static bool Serialize<T>(T model, SerializeType type, string strUrl) where T : class, new()
+        public static bool Serialize<T>(T model, SerializeType type, string filename) where T : class, new()
         {
-            bool result;
+            bool result = false;
             try
             {
-                using (FileStream fileStream = new FileStream(strUrl, FileMode.Create))
+                using (FileStream fileStream = new FileStream(filename, FileMode.Create))
                 {
                     switch (type)
                     {
@@ -39,9 +39,10 @@ namespace CSharpHelper
                 }
                 result = true;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw ex;
+                result = false;
+                //throw;
             }
             return result;
         }
@@ -104,7 +105,7 @@ namespace CSharpHelper
 }
 
 
-namespace CSharpHelper
+namespace CSharpHelper.Serialize
 {
     public enum SerializeType
     {

@@ -1,37 +1,37 @@
-﻿using CSharpHelper;
-using Newtonsoft.Json;
+﻿using System.IO;
+using System.Runtime.Serialization.Json;
+using System.Text;
 
 namespace CSharpHelperLib.Json
 {
-    public static class JsonHelper
+    public class JsonHelper
     {
-        public static string ToJson(this object obj)
-        {
-            return JsonConvert.SerializeObject(obj);
-        }
 
-        public static object JsonResult(string url, string strContentType = "application/json")
+        public static string ObjectToJson(object obj)
         {
-            string value = HttpClientHelper.Response(url, strContentType);
-            return JsonConvert.DeserializeObject(value);
+            DataContractJsonSerializer serializer = new DataContractJsonSerializer(obj.GetType());
+            using (MemoryStream stream = new MemoryStream())
+            {
+                serializer.WriteObject(stream, obj);
+                return Encoding.UTF8.GetString(stream.ToArray());
+            }
         }
-
-        public static T JsonResult<T>(string url, string strContentType = "application/json")
+        public static object JsonToObject(string jsonString, object obj)
         {
-            string value = HttpClientHelper.Response(url, strContentType);
-            return JsonConvert.DeserializeObject<T>(value);
+            DataContractJsonSerializer serializer = new DataContractJsonSerializer(obj.GetType());
+            using (MemoryStream mStream = new MemoryStream(Encoding.UTF8.GetBytes(jsonString)))
+            {
+                return serializer.ReadObject(mStream);
+            }
+
         }
-
-        public static object JsonResult(string url, string postData, string strContentType = "application/json")
+        public static T JsonToObject<T>(string jsonString, T obj)
         {
-            string value = HttpClientHelper.Response(url, postData, strContentType);
-            return JsonConvert.DeserializeObject(value);
-        }
-
-        public static T JsonResult<T>(string url, string postData, string strContentType = "application/json")
-        {
-            string value = HttpClientHelper.Response(url, postData, strContentType);
-            return JsonConvert.DeserializeObject<T>(value);
+            DataContractJsonSerializer serializer = new DataContractJsonSerializer(obj.GetType());
+            using (MemoryStream mStream = new MemoryStream(Encoding.UTF8.GetBytes(jsonString)))
+            {
+                return (T) serializer.ReadObject(mStream);
+            }
         }
     }
 }

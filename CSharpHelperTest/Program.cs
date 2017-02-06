@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CSharpHelperLib.ProcessResultInfo;
+using CSharpHelperLib.TarAndZip;
 using RemoteSenseCommLib.Tools;
 namespace CSharpHelperTest
 {
@@ -10,9 +12,19 @@ namespace CSharpHelperTest
     {
         static void Main(string[] args)
         {
-            TestLogHelper();
-            TestDateTimeHelper();
+          //  TestLogHelper();
+            //TestDateTimeHelper();
+            TestTarAndZip();
 
+        }
+
+        private static void TestTarAndZip()
+        {
+           //TarHelper helper = new TarHelper();
+            //helper.ExtractTar(@"E:\test\HDFExplorer.rar", @"e:\test\b");
+         //WinRarHelper helper = new WinRarHelper();
+         ProcessResultInfo processResultInfo= new ProcessResultInfo();
+            WinRarHelper.DeCompressRar(@"E:\test\a.rar", @"e:\test\b",out processResultInfo);
         }
 
         private static void TestDateTimeHelper()
